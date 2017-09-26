@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.Core", "Fiap.Master.Chefe.Core\Fiap.Master.Chefe.Core.csproj", "{EF197F98-3B38-47EF-A58F-3BD23FBD46D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.API", "Fiap.Master.Chefe.API\Fiap.Master.Chefe.API.csproj", "{93B9DF84-37DA-4255-8CF5-E47602BDC0E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.UnitTest", "Fiap.Master.Chefe.UnitTest\Fiap.Master.Chefe.UnitTest.csproj", "{18D40185-1528-4389-87D5-B6EDA14CD0DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Master.Chefe.UnitTest", "Fiap.Master.Chefe.UnitTest\Fiap.Master.Chefe.UnitTest.csproj", "{18D40185-1528-4389-87D5-B6EDA14CD0DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Master.Chefe.API", "Fiap.Master.Chefe.API\Fiap.Master.Chefe.API.csproj", "{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +19,19 @@ Global
 		{EF197F98-3B38-47EF-A58F-3BD23FBD46D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF197F98-3B38-47EF-A58F-3BD23FBD46D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF197F98-3B38-47EF-A58F-3BD23FBD46D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93B9DF84-37DA-4255-8CF5-E47602BDC0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93B9DF84-37DA-4255-8CF5-E47602BDC0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93B9DF84-37DA-4255-8CF5-E47602BDC0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93B9DF84-37DA-4255-8CF5-E47602BDC0E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18D40185-1528-4389-87D5-B6EDA14CD0DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18D40185-1528-4389-87D5-B6EDA14CD0DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D40185-1528-4389-87D5-B6EDA14CD0DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D40185-1528-4389-87D5-B6EDA14CD0DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {936EF35A-7DCA-4077-8C0B-32CEB1A7B69E}
 	EndGlobalSection
 EndGlobal

@@ -35,5 +35,6 @@ namespace Fiap.Master.Chefe.Core.Repository
                 .WithMany(y => y.ReceitaIngredientes)
                 .HasForeignKey(y => y.IngredienteId);
         }
+        
     }
 }
