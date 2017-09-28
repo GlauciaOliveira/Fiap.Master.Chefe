@@ -6,12 +6,12 @@ namespace Fiap.Master.Chefe.Core.Model
 {
     public class ReceitaIngredientes
     {
-        public int ReceitaId { get; set; }
+        public int ReceitasId { get; set; }
 
-        public int IngredienteId { get; set; }
+        public int IngredientesId { get; set; }
 
-        public Receita Receita { get; set; }
+        public Receitas Receita { get; set; }
 
-        public Ingrediente Ingrediente { get; set; }
+        public Ingredientes Ingrediente { get; set; }
     }
 }
