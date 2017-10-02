@@ -29,13 +29,19 @@ namespace Fiap.Master.Chefe.Site
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<ApplicationUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>()
+            //    .AddDefaultTokenProviders();
 
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+            //services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddAuthentication("app")
+                .AddCookie("app", options =>
+                {
+                    options.LoginPath ="/account/index";
+                    options.AccessDeniedPath = "/account/index";
+                });
             services.AddMvc();
         }
 
