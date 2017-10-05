@@ -11,6 +11,7 @@ namespace Fiap.Master.Chefe.API.Controllers
 {
     [Produces("application/json")]
     [Route("api/Comentarios")]
+    //[Route("api/[controller]")]
     public class ComentariosController : Controller
     {
         ComentariosRepository _contexto = new ComentariosRepository(new MasterChefeContext());
@@ -28,7 +29,7 @@ namespace Fiap.Master.Chefe.API.Controllers
         }
 
         // GET: api/Comentarios/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var result = _contexto.ListarPorId(id);

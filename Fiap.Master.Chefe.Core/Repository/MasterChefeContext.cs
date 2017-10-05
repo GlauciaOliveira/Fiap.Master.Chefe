@@ -24,15 +24,15 @@ namespace Fiap.Master.Chefe.Core.Repository
         public DbSet<Model.Categorias> Categoria { get; set; }
         public DbSet<Model.Comentarios> Comentario { get; set; }
         public DbSet<Model.ReceitaPontuacao> ReceitaPontuacao { get; set; }
-        public DbSet<Model.Pontuacao> Pontuacao { get; set; }
+        //public DbSet<Model.Pontuacao> Pontuacao { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ReceitaIngredientes>()
                 .HasKey(x => new { x.ReceitasId, x.IngredientesId });
 
-            modelBuilder.Entity<ReceitaPontuacao>()
-                .HasKey(x => new { x.ReceitasId, x.PontuacaoId });
+            //modelBuilder.Entity<ReceitaPontuacao>()
+            //    .HasKey(x => new { x.ReceitasId, x.PontuacaoId });
 
             modelBuilder.Entity<ReceitaIngredientes>()
                 .HasOne(x => x.Receita)
@@ -44,15 +44,15 @@ namespace Fiap.Master.Chefe.Core.Repository
                 .WithMany(y => y.ReceitaIngredientes)
                 .HasForeignKey(y => y.IngredientesId);
 
-            modelBuilder.Entity<ReceitaPontuacao>()
-                .HasOne(x => x.Receita)
-                .WithMany(y => y.ReceitaPontuacao)
-                .HasForeignKey(y => y.ReceitasId);
+            //modelBuilder.Entity<ReceitaPontuacao>()
+            //    .HasOne(x => x.Receita)
+            //    .WithMany(y => y.ReceitaPontuacao)
+            //    .HasForeignKey(y => y.ReceitasId);
 
-            modelBuilder.Entity<ReceitaPontuacao>()
-                .HasOne(x => x.Pontuacao)
-                .WithMany(y => y.ReceitaPontuacao)
-                .HasForeignKey(y => y.PontuacaoId);
+            //modelBuilder.Entity<ReceitaPontuacao>()
+            //    .HasOne(x => x.Pontuacao)
+            //    .WithMany(y => y.ReceitaPontuacao)
+            //    .HasForeignKey(y => y.PontuacaoId);
 
             modelBuilder.Entity<Usuarios>()
                 .HasMany(c => c.Comentarios)

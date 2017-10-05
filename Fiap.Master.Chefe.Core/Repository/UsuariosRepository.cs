@@ -51,6 +51,12 @@ namespace Fiap.Master.Chefe.Core.Repository
             return result;
         }
 
+        public Usuarios Autorization(string user, string senha)
+        {
+            var result = _context.Usuario.Where(x => x.Login.Equals(user) && x.Password.Equals(senha)).SingleOrDefault();
+            return result;
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)

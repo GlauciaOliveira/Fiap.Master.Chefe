@@ -19,7 +19,7 @@ namespace Fiap.Master.Chefe.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var result = _contexto.Listar();
+            var result = _contexto.ListarReceitasModel();
 
             if (result == null)
                 return NotFound();
@@ -42,11 +42,11 @@ namespace Fiap.Master.Chefe.API.Controllers
 
         // POST: api/Receitas
         [HttpPost]
-        public IActionResult Post([FromBody]Receitas entity)
+        public IActionResult Post([FromBody]Receitas entity, [FromBody]List<IngredientesModelView> listIngredientes)
         {
             try
             {
-                _contexto.Incluir(entity);
+                _contexto.IncluirComposto(entity, listIngredientes);
                 return Ok(entity);
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace Fiap.Master.Chefe.API.Controllers
 
         // PUT: api/Receitas/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Receitas entity)
+        public IActionResult Put(int id, [FromBody]Receitas entity, [FromBody]Ingredientes entityIngredientes)
         {
             try
             {

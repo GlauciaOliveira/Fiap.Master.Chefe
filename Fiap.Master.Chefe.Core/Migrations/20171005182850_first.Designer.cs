@@ -11,7 +11,7 @@ using System;
 namespace Fiap.Master.Chefe.Core.Migrations
 {
     [DbContext(typeof(MasterChefeContext))]
-    [Migration("20170928210913_first")]
+    [Migration("20171005182850_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,23 +69,15 @@ namespace Fiap.Master.Chefe.Core.Migrations
                     b.ToTable("Ingrediente");
                 });
 
-            modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.Pontuacao", b =>
-                {
-                    b.Property<int>("PontuacaoId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Nota");
-
-                    b.HasKey("PontuacaoId");
-
-                    b.ToTable("Pontuacao");
-                });
-
             modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.ReceitaIngredientes", b =>
                 {
                     b.Property<int>("ReceitasId");
 
                     b.Property<int>("IngredientesId");
+
+                    b.Property<int>("Quantidade");
+
+                    b.Property<string>("Unidade");
 
                     b.HasKey("ReceitasId", "IngredientesId");
 
@@ -96,13 +88,16 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
             modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.ReceitaPontuacao", b =>
                 {
+                    b.Property<int>("ReceitaPontuacaoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Nota");
+
                     b.Property<int>("ReceitasId");
 
-                    b.Property<int>("PontuacaoId");
+                    b.HasKey("ReceitaPontuacaoId");
 
-                    b.HasKey("ReceitasId", "PontuacaoId");
-
-                    b.HasIndex("PontuacaoId");
+                    b.HasIndex("ReceitasId");
 
                     b.ToTable("ReceitaPontuacao");
                 });
@@ -149,7 +144,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
             modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.Comentarios", b =>
                 {
-                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas")
+                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas", "Receitas")
                         .WithMany("Comentarios")
                         .HasForeignKey("ReceitasId");
 
@@ -173,12 +168,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
             modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.ReceitaPontuacao", b =>
                 {
-                    b.HasOne("Fiap.Master.Chefe.Core.Model.Pontuacao", "Pontuacao")
-                        .WithMany("ReceitaPontuacao")
-                        .HasForeignKey("PontuacaoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas", "Receita")
+                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas")
                         .WithMany("ReceitaPontuacao")
                         .HasForeignKey("ReceitasId")
                         .OnDelete(DeleteBehavior.Cascade);

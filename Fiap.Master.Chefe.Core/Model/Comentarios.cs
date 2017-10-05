@@ -13,5 +13,7 @@ namespace Fiap.Master.Chefe.Core.Model
         public DateTime DataInclusao { get; set; }
 
         public virtual Usuarios Usuario { get; set; }
+
+        public virtual Receitas Receitas { get; set; }
     }
 }

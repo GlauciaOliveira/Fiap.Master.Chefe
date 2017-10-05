@@ -37,19 +37,6 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pontuacao",
-                columns: table => new
-                {
-                    PontuacaoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nota = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pontuacao", x => x.PontuacaoId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
@@ -126,7 +113,9 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 columns: table => new
                 {
                     ReceitasId = table.Column<int>(type: "int", nullable: false),
-                    IngredientesId = table.Column<int>(type: "int", nullable: false)
+                    IngredientesId = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    Unidade = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -149,18 +138,14 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 name: "ReceitaPontuacao",
                 columns: table => new
                 {
-                    ReceitasId = table.Column<int>(type: "int", nullable: false),
-                    PontuacaoId = table.Column<int>(type: "int", nullable: false)
+                    ReceitaPontuacaoId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nota = table.Column<double>(type: "float", nullable: false),
+                    ReceitasId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReceitaPontuacao", x => new { x.ReceitasId, x.PontuacaoId });
-                    table.ForeignKey(
-                        name: "FK_ReceitaPontuacao_Pontuacao_PontuacaoId",
-                        column: x => x.PontuacaoId,
-                        principalTable: "Pontuacao",
-                        principalColumn: "PontuacaoId",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_ReceitaPontuacao", x => x.ReceitaPontuacaoId);
                     table.ForeignKey(
                         name: "FK_ReceitaPontuacao_Receita_ReceitasId",
                         column: x => x.ReceitasId,
@@ -195,9 +180,9 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 column: "IngredientesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReceitaPontuacao_PontuacaoId",
+                name: "IX_ReceitaPontuacao_ReceitasId",
                 table: "ReceitaPontuacao",
-                column: "PontuacaoId");
+                column: "ReceitasId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -213,9 +198,6 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
             migrationBuilder.DropTable(
                 name: "Ingrediente");
-
-            migrationBuilder.DropTable(
-                name: "Pontuacao");
 
             migrationBuilder.DropTable(
                 name: "Receita");

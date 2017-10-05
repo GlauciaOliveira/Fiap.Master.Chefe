@@ -9,6 +9,7 @@ namespace Fiap.Master.Chefe.Core.Repository
     {
         ICollection<T> Listar();
         T ListarPorId(int id);
+        //int IncluirComposto(T entity, List<T> entities);
         void Incluir(T entity);
         void Atualizar(T entity);
         void Excluir(T entity);

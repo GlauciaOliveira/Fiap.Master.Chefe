@@ -28,6 +28,18 @@ namespace Fiap.Master.Chefe.API.Controllers
 
         // GET: api/Usuarios/5
         [HttpGet("{id}", Name = "Get")]
+        public IActionResult Autentication(string user, string senha)
+        {
+            var result = _contexto.Autorization(user, senha);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        // GET: api/Usuarios/5
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var result = _contexto.ListarPorId(id);

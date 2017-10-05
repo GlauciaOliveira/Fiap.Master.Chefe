@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Fiap.Master.Chefe.Core.Model
 {
-    public class ReceitaIngredientes
+    public class IngredientesModelView
     {
-        public int ReceitasId { get; set; }
-
         public int IngredientesId { get; set; }
 
         public int Quantidade { get; set; }
 
         public string Unidade { get; set; }
 
-        public Receitas Receita { get; set; }
-
-        public Ingredientes Ingrediente { get; set; }
+        public string NomeIngrediente { get; set; }
     }
 }

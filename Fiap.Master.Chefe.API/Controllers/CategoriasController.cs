@@ -28,7 +28,7 @@ namespace Fiap.Master.Chefe.API.Controllers
         }
 
         // GET: api/Categorias/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var result = _contexto.ListarPorId(id);
