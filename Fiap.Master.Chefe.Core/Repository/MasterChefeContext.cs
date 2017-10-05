@@ -54,9 +54,9 @@ namespace Fiap.Master.Chefe.Core.Repository
             //    .WithMany(y => y.ReceitaPontuacao)
             //    .HasForeignKey(y => y.PontuacaoId);
 
-            modelBuilder.Entity<Usuarios>()
-                .HasMany(c => c.Comentarios)
-                .WithOne(e => e.Usuario);
+            //modelBuilder.Entity<Usuarios>()
+            //    .HasMany(c => c.Comentarios)
+            //    .WithOne(e => e.Usuario);
 
             modelBuilder.Entity<Categorias>()
                 .HasMany(c => c.Receitas)

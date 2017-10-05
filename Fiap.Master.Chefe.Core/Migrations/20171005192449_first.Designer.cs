@@ -11,7 +11,7 @@ using System;
 namespace Fiap.Master.Chefe.Core.Migrations
 {
     [DbContext(typeof(MasterChefeContext))]
-    [Migration("20171005182850_first")]
+    [Migration("20171005192449_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
                     b.Property<DateTime>("DataInclusao");
 
-                    b.Property<int?>("ReceitasId");
+                    b.Property<int>("ReceitasId");
 
                     b.Property<string>("Texto");
 
@@ -144,9 +144,10 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
             modelBuilder.Entity("Fiap.Master.Chefe.Core.Model.Comentarios", b =>
                 {
-                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas", "Receitas")
+                    b.HasOne("Fiap.Master.Chefe.Core.Model.Receitas")
                         .WithMany("Comentarios")
-                        .HasForeignKey("ReceitasId");
+                        .HasForeignKey("ReceitasId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Fiap.Master.Chefe.Core.Model.Usuarios", "Usuario")
                         .WithMany("Comentarios")

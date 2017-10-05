@@ -15,6 +15,10 @@ namespace Fiap.Master.Chefe.Core.Model
 
         public string ModoPreparo { get; set; }
 
+        public int CategoriasId { get; set; }
+
+        public int UsuariosId { get; set; }
+
         public ICollection<ReceitaIngredientes> ReceitaIngredientes { get; set; }
 
         public ICollection<ReceitaPontuacao> ReceitaPontuacao { get; set; }

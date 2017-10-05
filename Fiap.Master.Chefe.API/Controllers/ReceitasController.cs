@@ -25,14 +25,13 @@ namespace Fiap.Master.Chefe.API.Controllers
                 return NotFound();
 
             return Ok(result);
-            //return new string[] { "value1", "value2" };
         }
 
         // GET: api/Receitas/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var result = _contexto.ListarPorId(id);
+            var result = _contexto.ListarReceitaModelPorId(id);
 
             if (result == null)
                 return NotFound();
@@ -42,12 +41,12 @@ namespace Fiap.Master.Chefe.API.Controllers
 
         // POST: api/Receitas
         [HttpPost]
-        public IActionResult Post([FromBody]Receitas entity, [FromBody]List<IngredientesModelView> listIngredientes)
+        public IActionResult Post([FromBody]ReceitasModelView entity)
         {
             try
             {
-                _contexto.IncluirComposto(entity, listIngredientes);
-                return Ok(entity);
+                _contexto.IncluirReceitasModel(entity);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -57,11 +56,11 @@ namespace Fiap.Master.Chefe.API.Controllers
 
         // PUT: api/Receitas/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]Receitas entity, [FromBody]Ingredientes entityIngredientes)
+        public IActionResult Put(int id, [FromBody]ReceitasModelView entity)
         {
             try
             {
-                _contexto.Atualizar(entity);
+                _contexto.AtualizarReceitaModel(entity);
                 return Ok(entity);
             }
             catch (Exception ex)

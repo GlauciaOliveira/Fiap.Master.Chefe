@@ -8,12 +8,14 @@ namespace Fiap.Master.Chefe.Core.Model
     {
         public int ComentariosId { get; set; }
 
+        public int ReceitasId { get; set; }
+
         public string Texto { get; set; }
 
         public DateTime DataInclusao { get; set; }
 
-        public virtual Usuarios Usuario { get; set; }
+        //public virtual Usuarios Usuario { get; set; }
 
-        public virtual Receitas Receitas { get; set; }
+        //public virtual Receitas Receitas { get; set; }
     }
 }

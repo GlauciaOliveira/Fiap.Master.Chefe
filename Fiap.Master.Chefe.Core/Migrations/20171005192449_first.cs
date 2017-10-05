@@ -87,7 +87,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
                     ComentariosId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DataInclusao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReceitasId = table.Column<int>(type: "int", nullable: true),
+                    ReceitasId = table.Column<int>(type: "int", nullable: false),
                     Texto = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UsuariosId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -99,7 +99,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
                         column: x => x.ReceitasId,
                         principalTable: "Receita",
                         principalColumn: "ReceitasId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Comentario_Usuario_UsuariosId",
                         column: x => x.UsuariosId,
