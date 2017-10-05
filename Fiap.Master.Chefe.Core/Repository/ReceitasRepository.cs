@@ -40,6 +40,7 @@ namespace Fiap.Master.Chefe.Core.Repository
                 });
             }
 
+
             var receita = new Receitas()
             {
                 ReceitasId = entity.ReceitasId,
