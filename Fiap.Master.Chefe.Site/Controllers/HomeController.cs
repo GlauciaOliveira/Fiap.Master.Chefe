@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Fiap.Master.Chefe.Site.Models;
+using Fiap.Master.Chefe.Core.Model;
 
 namespace Fiap.Master.Chefe.Site.Controllers
 {
@@ -17,15 +18,34 @@ namespace Fiap.Master.Chefe.Site.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Somos um canal facilitador.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Dados para cotato.";
 
+            return View();
+        }
+
+        public IActionResult Cadastro()
+        {
+            ViewData["Message"] = "Envio de Receitas";
+            return View();
+        }
+
+        public IActionResult Consulta()
+        {
+            ViewData["Message"] = "Consulta de Receitas";
+            
+            return View();
+        }
+
+        public IActionResult CadastroUsuario()
+        {
+            ViewData["Message"] = "Cadastre-se";
             return View();
         }
 

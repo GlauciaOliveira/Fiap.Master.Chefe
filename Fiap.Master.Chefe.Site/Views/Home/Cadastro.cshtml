@@ -1,0 +1,30 @@
+﻿@model CadastroViewModel
+@{
+    ViewData["Title"] = "Envie suas Receitas";
+}
+<h2>@ViewData["Title"]</h2>
+@*<h3>@ViewData["Message"]</h3>*@
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Titulo">Título da Receita:</label>
+                <input asp-for="Titulo" class="form-control" placeholder="Coloque o título da receita aqui" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceitaIngredientes">Ingredientes:</label>
+                        <textarea asp-for="ReceitaIngredientes" placeholder="Informe quais são os ingredientes" class="form-control" type="text" aria-multiline="true"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModoPreparo">Modo de Preparo:</label>
+                <textarea asp-for="ModoPreparo" placeholder="Explicar passo a passo como preparar a receita" class="form-control" type="text" aria-multiline="true"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comentarios">Comentários:</label>
+                <textarea asp-for="Comentarios" placeholder="Deixe aqui algumas dicas necessárias para um bom preparo" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Registrar</button>
+        </form>
+    </div>
+</div>

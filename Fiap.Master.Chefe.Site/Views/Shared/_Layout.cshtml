@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Fiap.Master.Chefe.Site</title>
+    <title>@ViewData["Title"] - Master Chef</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -20,21 +20,24 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-collapse" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Fiap.Master.Chefe.Site</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Master Chef</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="CadastroUsuario">Cadastre-se</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Cadastro">Envie suas receitas</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Consulta">Consulta</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre nós</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contato</a></li>
                 </ul>
-                @await Html.PartialAsync("_LoginPartial")
+                @*@await Html.PartialAsync("_LoginPartial")*@
             </div>
         </div>
     </nav>
@@ -42,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - Fiap.Master.Chefe.Site</p>
+            <p>&copy; 2017 - Site Master Chefe</p>
         </footer>
     </div>
 

@@ -1,0 +1,27 @@
+﻿@model CadastroUsuarioViewModel
+@{
+    ViewData["Title"] = "Cadastre-se";
+}
+<h2>@ViewData["Title"]</h2>
+@*<h3>@ViewData["Message"]</h3>*@
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Nome">Nome:</label>
+                <input asp-for="Nome" class="form-control" placeholder="Informe seu nome" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Login">E-mail</label>
+                <input asp-for="Login" class="form-control" placeholder="Informe seu e-mail" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Senha:</label>
+                <input asp-for="Password" class="form-control" placeholder="Informe sua senha" />
+            </div>
+            
+            <button type="submit" class="btn btn-default">Cadastrar</button>
+        </form>
+    </div>
+</div>

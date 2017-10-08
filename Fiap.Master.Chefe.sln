@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.UnitTest"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.API", "Fiap.Master.Chefe.API\Fiap.Master.Chefe.API.csproj", "{13144A36-D5A7-4FB9-B2E5-CC7EF977AC2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiap.Master.Chefe.Site", "Fiap.Master.Chefe.Site\Fiap.Master.Chefe.Site.csproj", "{34CA4C5E-793E-4678-BB2A-D6E9A3CC6517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiap.Master.Chefe.Site", "Fiap.Master.Chefe.Site\Fiap.Master.Chefe.Site.csproj", "{34CA4C5E-793E-4678-BB2A-D6E9A3CC6517}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
