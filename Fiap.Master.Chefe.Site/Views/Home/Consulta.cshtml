@@ -5,9 +5,27 @@
 <h2>@ViewData["Title"]</h2>
 @*<h3>@ViewData["Message"]</h3>*@
 
-<div class="container">
-    <ul>
-        <li style="list-style-type:square">@Html.DisplayNameFor(m => m.Titulo)</li>
+<div class="row">
+    <br/>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Titulo">Por Título da Receita: </label>
+            <select asp-for="Titulo" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Categoria">Por Categoria da Receita: </label>
+            <select asp-for="Categoria" class="form-control"></select>
+        </div>
+        
+    </div>
+</div>
 
-    </ul>
+
+<div class="container">
+    
+    <div class="row">
+        
+        <label asp-for="Titulo"></label>
+        <label asp-for="IngredientesModelView"></label>
+    </div>
 </div>
