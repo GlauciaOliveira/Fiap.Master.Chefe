@@ -106,7 +106,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
                     b.Property<int>("ReceitasId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("CategoriasId");
+                    b.Property<int>("CategoriasId");
 
                     b.Property<DateTime>("DataCadastro");
 
@@ -114,7 +114,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
 
                     b.Property<string>("Titulo");
 
-                    b.Property<int?>("UsuariosId");
+                    b.Property<int>("UsuariosId");
 
                     b.HasKey("ReceitasId");
 
@@ -148,7 +148,7 @@ namespace Fiap.Master.Chefe.Core.Migrations
                         .HasForeignKey("ReceitasId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Fiap.Master.Chefe.Core.Model.Usuarios", "Usuario")
+                    b.HasOne("Fiap.Master.Chefe.Core.Model.Usuarios")
                         .WithMany("Comentarios")
                         .HasForeignKey("UsuariosId");
                 });
@@ -178,11 +178,13 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 {
                     b.HasOne("Fiap.Master.Chefe.Core.Model.Categorias", "Categoria")
                         .WithMany("Receitas")
-                        .HasForeignKey("CategoriasId");
+                        .HasForeignKey("CategoriasId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Fiap.Master.Chefe.Core.Model.Usuarios", "Usuario")
                         .WithMany("Receitas")
-                        .HasForeignKey("UsuariosId");
+                        .HasForeignKey("UsuariosId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

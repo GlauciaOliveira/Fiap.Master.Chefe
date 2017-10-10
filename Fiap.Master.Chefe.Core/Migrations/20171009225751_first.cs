@@ -57,11 +57,11 @@ namespace Fiap.Master.Chefe.Core.Migrations
                 {
                     ReceitasId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CategoriasId = table.Column<int>(type: "int", nullable: true),
+                    CategoriasId = table.Column<int>(type: "int", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModoPreparo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UsuariosId = table.Column<int>(type: "int", nullable: true)
+                    UsuariosId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,13 +71,13 @@ namespace Fiap.Master.Chefe.Core.Migrations
                         column: x => x.CategoriasId,
                         principalTable: "Categoria",
                         principalColumn: "CategoriasId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Receita_Usuario_UsuariosId",
                         column: x => x.UsuariosId,
                         principalTable: "Usuario",
                         principalColumn: "UsuariosId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

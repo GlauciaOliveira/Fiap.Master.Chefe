@@ -13,6 +13,7 @@ namespace Fiap.Master.Chefe.Core.Repository
         public MasterChefeContext() : base(new DbContextOptionsBuilder<MasterChefeContext>()
             .UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=DbMasterChefe;
                             Trusted_Connection=True;MultipleActiveResultSets=true").Options)
+
         {
 
         }
